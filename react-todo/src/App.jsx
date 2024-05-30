@@ -17,7 +17,7 @@ function App() {
   };
 
   const deleteTodo = (id) => {
-    setTodos((prev) => prev.filter((ele) => ele.id !== id));
+    setTodos((prev) => prev.filter((ele) => ele.id !== id))
   };
 
   const toggleComplete = (id) => {
