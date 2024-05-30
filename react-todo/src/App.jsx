@@ -17,8 +17,6 @@ function App() {
   };
 
   const deleteTodo = (id) => {
-    console.log(id);
-    console.log(todos);
     setTodos((prev) => prev.filter((ele) => ele.id !== id));
   };
 

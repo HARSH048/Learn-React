@@ -11,8 +11,6 @@ function App() {
     let pass = "";
     let str = "ABCDEFHIJKLMNOPQRSTUVWXYZ"
 
-    console.log(numAllowed)
-
     if(numAllowed){
       str+="0123456789"
     }

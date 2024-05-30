@@ -12,7 +12,6 @@ function App() {
   const options = Object.keys(currencyInfo);
 
   const onSwapChange = () => {
-    console.log("hello")
     setFrom(to);
     setTo(from);
     setConvertedAmount(amount);
