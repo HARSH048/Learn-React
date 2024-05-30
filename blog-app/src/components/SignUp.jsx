@@ -1,10 +1,11 @@
 import React, { useState } from "react";
-import authService from "../appwrite/auth.service";
+import dbService from "../appwrite/auth.service";
 import { useNavigate } from "react-router-dom";
 import { login } from "../store/authSlice";
 import { Button, Input, Logo } from "../components";
 import { useDispatch } from "react-redux";
 import { useForm } from "react-hook-form";
+import { Link } from "react-router-dom";
 
 export default function SignUp() {
   const navigate = useNavigate();
@@ -15,7 +16,7 @@ export default function SignUp() {
   const create = async (data) => {
     setError("");
     try {
-      const userData = await authService.createAccount(data);
+      const userData = await dbService.createAccount(data);
       if (userData) {
         const userData = authService.getCurrentUser();
         if (userData) dispatch(login(userData));
@@ -79,7 +80,7 @@ export default function SignUp() {
                 required: true,
               })}
             />
-            <Button type="submit" className="w-full">
+            <Button type="submit" className="w-full" onSubmit={create}>
               Create Account
             </Button>
           </div>
